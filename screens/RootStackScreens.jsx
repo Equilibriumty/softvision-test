@@ -14,7 +14,11 @@ export default function RootStackScreens() {
   return (
     <NavigationContainer>
       <Tab.Navigator barStyle={globalStyles.primaryColor}>
-        <Tab.Screen name='Home' component={Home} />
+        <Tab.Screen
+          name='Home'
+          component={Home}
+          options={{ tabBarIcon: <svg></svg> }}
+        />
         <Tab.Screen name='Join Game' component={JoinGame} />
         <Tab.Screen name='Create Game' component={CreateGame} />
         <Tab.Screen name='My Games' component={MyGames} />

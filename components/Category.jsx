@@ -13,8 +13,9 @@ export default function Category({ icon, title, isActive }) {
         </View>
       ) : (
         <LinearGradient
-          colors={["#052140", "#0C3461"]}
-          end={{ x: 0.5, y: -0.5 }}
+          colors={["#0C3461", "#052140"]}
+          start={{ x: 0, y: -0.5 }}
+          end={{ x: 0.5, y: 1 }}
           style={globalStyles.defaultCategory}
         >
           <View style={globalStyles.categoryIcon}>{icon}</View>

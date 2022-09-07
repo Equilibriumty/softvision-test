@@ -17,31 +17,43 @@ export default function RootStackScreens() {
   const Tab = createMaterialBottomTabNavigator();
   return (
     <NavigationContainer>
-      <Tab.Navigator barStyle={globalStyles.primaryColor} shifting={false}>
+      <Tab.Navigator shifting={false} barStyle={globalStyles.primaryColor}>
         <Tab.Screen
           name="Home"
           component={Home}
-          options={{ tabBarIcon: () => <MemoHomeIcon /> }}
+          options={{
+            tabBarIcon: ({ focused }) => <MemoHomeIcon isFocused={focused} />,
+          }}
         />
         <Tab.Screen
           name="Join Game"
           component={JoinGame}
-          options={{ tabBarIcon: () => <MemoJoinIcon /> }}
+          options={{
+            tabBarIcon: ({ focused }) => <MemoJoinIcon isFocused={focused} />,
+          }}
         />
         <Tab.Screen
           name="Create Game"
           component={CreateGame}
-          options={{ tabBarIcon: () => <MemoCreateIcon /> }}
+          options={{
+            tabBarIcon: ({ focused }) => <MemoCreateIcon isFocused={focused} />,
+          }}
         />
         <Tab.Screen
           name="My Games"
           component={MyGames}
-          options={{ tabBarIcon: () => <MemoMyGamesIcon /> }}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <MemoMyGamesIcon isFocused={focused} />
+            ),
+          }}
         />
         <Tab.Screen
           name="More"
           component={More}
-          options={{ tabBarIcon: () => <MemoDotsIcon /> }}
+          options={{
+            tabBarIcon: ({ focused }) => <MemoDotsIcon isFocused={focused} />,
+          }}
         />
       </Tab.Navigator>
     </NavigationContainer>

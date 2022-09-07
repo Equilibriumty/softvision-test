@@ -16,7 +16,10 @@ export const globalStyles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#031E3C",
   },
-
+  tabTitle: {
+    fontFamily: "Poppins-Regular",
+    fontSize: 10,
+  },
   carouselView: {
     height: 80,
     marginBottom: 36,
@@ -30,6 +33,7 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 4,
     justifyContent: "center",
     alignItems: "center",
+    elevation: 15,
   },
   defaultCategory: {
     height: 60,
@@ -42,7 +46,6 @@ export const globalStyles = StyleSheet.create({
     alignItems: "center",
   },
   categoryTitle: {
-    opacity: 0.7,
     fontSize: 11,
     fontFamily: "Lato-Regular",
     color: "#FFFFFF",

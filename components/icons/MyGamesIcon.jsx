@@ -1,7 +1,8 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-function MyGamesIcon() {
+function MyGamesIcon({ isFocused }) {
+  const opacity = isFocused ? "1" : "0.7";
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +10,7 @@ function MyGamesIcon() {
       height="20"
       fill="none"
       viewBox="0 0 21 20"
-      opacity="0.4"
+      opacity={opacity}
     >
       <Path
         fill="#fff"

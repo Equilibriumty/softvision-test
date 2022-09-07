@@ -1,20 +1,27 @@
-import { View, Text } from 'react-native';
-import React from 'react';
-import { globalStyles } from '../styles/styles';
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, Text } from "react-native";
+import React from "react";
+import { globalStyles } from "../styles/styles";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Category({ icon, title, isActive }) {
-  const categoryStyle = isActive
-    ? globalStyles.activeCategory
-    : globalStyles.defaultCategory;
   return (
-    <LinearGradient
-      colors={['#052140', '#0C3461']}
-      end={{ x: 0.5, y: -0.5 }}
-      style={categoryStyle}
-    >
-      <Text style={globalStyles.categoryTitle}>{title}</Text>
-      <View>{icon}</View>
-    </LinearGradient>
+    <View>
+      {isActive ? (
+        <View style={globalStyles.activeCategory}>
+          <View style={globalStyles.categoryIcon}>{icon}</View>
+          <Text style={globalStyles.categoryTitle}>{title}</Text>
+        </View>
+      ) : (
+        <LinearGradient
+          colors={["#052140", "#0C3461"]}
+          end={{ x: 0.5, y: -0.5 }}
+          style={globalStyles.defaultCategory}
+        >
+          <View style={globalStyles.categoryIcon}>{icon}</View>
+
+          <Text style={globalStyles.categoryTitleWithOpacity}>{title}</Text>
+        </LinearGradient>
+      )}
+    </View>
   );
 }
